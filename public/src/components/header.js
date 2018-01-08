@@ -6,30 +6,24 @@ class Header extends Component {
   renderLinks = () => {
     console.log(this.props.authenticated)
     if(this.props.authenticated) {
-      return <li className="nav-item">
-        <Link className="nav-link" to="/logout/">Logout</Link>
-      </li>
+      return <Link className="item" to="/logout/">Logout</Link>
     } else {
       return [
-        <li className="nav-item" key={1}>
-          <Link className="nav-link" to="/login/">Login</Link>
-        </li>,
-        <li className="nav-item" key={2}>
-          <Link className="nav-link" to="/registration/">Register</Link>
-        </li>
+          <Link className="item" key={1} style={{display: 'inline', float: 'left'}} to="/login/">Login</Link>,
+          <Link className="item" key={2} style={{display: 'inline', float: 'left'}} to="/registration/">Register</Link>
       ];
-
     }
   }
 
   render() {
     return (
-      <nav className="navbar navbar-light">
-        <Link to="/" className="navbar-brand">Wildfire</Link>
-        <ul className="nav navbar-nav">
+      <div className="ui menu borderless">
+        <Link to="/" className="header item">Wildfire</Link>
+        <div>
           {this.renderLinks()}
-        </ul>
-      </nav>
+        </div>
+      </div>
+
     );
   }
 }

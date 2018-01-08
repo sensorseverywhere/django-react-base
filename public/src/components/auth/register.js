@@ -25,13 +25,13 @@ class Register extends Component {
     meta: { touched, error, warning }
    }) => {
     return (
-      <fieldset className="form-group">
+      <div className="field">
         <label>
           {label}:
         </label>
-        <input {...input} type={type} placeholder={label} className="form-control" />
+        <input {...input} type={type} placeholder={label} />
         {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-      </fieldset>
+      </div>
     );
   }
 
@@ -39,7 +39,7 @@ class Register extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormValues)}>
+      <form className="ui form" onSubmit={handleSubmit(this.handleFormValues)}>
         <Field
           name="username"
           component={this.renderField}
@@ -64,7 +64,7 @@ class Register extends Component {
           label="Confirm Password"
           validate={[required, minLength8]}
         />
-        <button action="submit" className="btn btn-primary">Register</button>
+        <button action="submit" className="ui button">Register</button>
       </form>
     );
   }

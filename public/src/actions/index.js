@@ -12,7 +12,7 @@ export function loginUser(values) {
       .then(response => {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
-        browserHistory.push('/dashboard');
+        browserHistory.push('/dashboard/');
       })
       .catch(() => {
         dispatch(authError('Incorrect login details'));
@@ -29,7 +29,7 @@ export function registerUser(values) {
 
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
-        browserHistory.push('/dashboard');
+        browserHistory.push('/dashboard/');
       })
       .catch(() => {
         dispatch(authError('Incorrect registration details'));
@@ -40,6 +40,15 @@ export function registerUser(values) {
 export function logoutUser() {
   localStorage.removeItem('token');
   return { type: UNAUTH_USER };
+}
+
+export function fetchMessage() {
+  return function(dispatch) {
+    axios.get(API_URL)
+      .then(response => {
+        console.log(response);
+      });
+  }
 }
 
 export function authError(error) {

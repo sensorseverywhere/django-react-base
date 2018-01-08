@@ -3,31 +3,35 @@ import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import * as actions from '../../actions';
 
+export const required = (value) => {
+  if (!value) {
+    return 'This field is required!';
+  }
+}
+
+export const minLength = min => value => value && value.length < min ? `Must be ${min} characters or more` : undefined
+export const minLength8 = minLength(8);
+
 class Login extends Component {
 
   handleFormValues = values => {
     this.props.loginUser(values);
   };
 
-  renderInput = ({ label, ...field }) => {
+  renderField = ({
+    input,
+    label,
+    type,
+    meta: { touched, error, warning }
+   }) => {
     return (
-      <fieldset className="form-group">
+      <div className="field">
         <label>
           {label}:
         </label>
-        <input {...field.input} type="text" className="form-control" />
-      </fieldset>
-    );
-  }
-
-  renderPassword = ({ label, ...field }) => {
-    return (
-      <fieldset className="form-group">
-        <label>
-          {label}:
-        </label>
-        <input {...field.input} type="password" className="form-control" />
-      </fieldset>
+        <input {...input} type={type} placeholder={label} />
+        {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+      </div>
     );
   }
 
@@ -45,11 +49,21 @@ class Login extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormValues)}>
-        <Field name="username" component={this.renderInput} label="Username" />
-        <Field name="password" component={this.renderPassword} label="Password" />
+      <form className="ui form" onSubmit={handleSubmit(this.handleFormValues)}>
+        <Field
+          name="username"
+          component={this.renderField}
+          label="Username"
+          validate={required}
+        />
+        <Field
+          name="password"
+          component={this.renderField}
+          label="Password"
+          validate={required}
+        />
         {this.renderAlert()}
-        <button action="submit" className="btn btn-primary">Sign In</button>
+        <button action="submit" className="ui button">Sign In</button>
       </form>
     );
   }
