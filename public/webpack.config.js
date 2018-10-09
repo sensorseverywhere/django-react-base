@@ -21,6 +21,12 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './',
+    headers: {
+     "Access-Control-Allow-Origin": "*",
+     "Access-Control-Allow-Headers": "Content-Type, Authorization, x-id, Content-Length, X-Requested-With",
+     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+     "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+   }
   }
 };
