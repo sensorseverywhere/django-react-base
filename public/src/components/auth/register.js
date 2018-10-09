@@ -14,16 +14,16 @@ export const minLength8 = minLength(8);
 
 class Register extends Component {
 
-  handleFormValues = values => {
+  handleFormValues(values) {
     this.props.registerUser(values);
   };
 
-  renderField = ({
+  renderField({
     input,
     label,
     type,
     meta: { touched, error, warning }
-   }) => {
+   }) {
     return (
       <div className="field">
         <label>

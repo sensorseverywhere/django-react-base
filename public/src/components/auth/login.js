@@ -14,16 +14,16 @@ export const minLength8 = minLength(8);
 
 class Login extends Component {
 
-  handleFormValues = values => {
+  handleFormValues(values) {
     this.props.loginUser(values);
   };
 
-  renderField = ({
+  renderField({
     input,
     label,
     type,
     meta: { touched, error, warning }
-   }) => {
+   }) {
     return (
       <div className="field">
         <label>
@@ -35,7 +35,7 @@ class Login extends Component {
     );
   }
 
-  renderAlert = () => {
+  renderAlert() {
     if(this.props.errorMessage) {
       return (
         <div className="alert alert-danger">

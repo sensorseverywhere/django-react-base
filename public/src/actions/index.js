@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { browserHistory } from 'react-router';
+import createBrowserHistory from 'history/createBrowserHistory';
 import { AUTH_USER, UNAUTH_USER, AUTH_ERROR } from './types';
 
+const browserHistory = createBrowserHistory();
 const API_URL = 'http://localhost:8000';
 
 export function loginUser(values) {

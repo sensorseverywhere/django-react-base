@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+//import { Router, Route } from 'react-router';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
 import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
@@ -18,6 +20,7 @@ import { AUTH_USER } from './actions/types';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
+const browserHistory = createBrowserHistory();
 
 const token = localStorage.getItem('token');
 if(token) {
@@ -28,7 +31,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRoute component={Home}/>
+        <Route component={Home}/>
         <Route path="login/" component={Login} />
         <Route path="logout/" component={Logout} />
         <Route path="registration/" component={Register} />
