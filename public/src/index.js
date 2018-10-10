@@ -12,7 +12,7 @@ import Login from './components/auth/login';
 import Logout from './components/auth/logout';
 import Register from './components/auth/register';
 import RequireAuth from './components/auth/require_auth';
-import Home from './components/home';
+import Header from './components/header';
 import Dashboard from './components/user/dashboard';
 
 import reducers from './reducers';
@@ -30,13 +30,17 @@ if(token) {
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <Route component={Home}/>
-        <Route path="login/" component={Login} />
-        <Route path="logout/" component={Logout} />
-        <Route path="registration/" component={Register} />
-        <Route path="dashboard/" component={RequireAuth(Dashboard)} />
-      </Route>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact={true} path="/" component={App} />
+          {/* <Route component={Home}/> */}
+          <Route path="/login/" component={Login} />
+          <Route path="/logout/" component={Logout} />
+          <Route path="/registration/" component={Register} />
+          <Route path="/dashboard/" component={RequireAuth(Dashboard)} />
+        </Switch>
+      </div>
     </Router>
   </Provider>
   , document.querySelector('.container'));

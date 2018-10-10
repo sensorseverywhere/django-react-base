@@ -16,7 +16,8 @@ module.exports = {
       // }
     }]
   },
-  mode: 'none',
+  devtool: 'eval', // this helps to browser to point to the exact file in the console, helps in debug
+  mode: 'development',
 
   devServer: {
     historyApiFallback: true,

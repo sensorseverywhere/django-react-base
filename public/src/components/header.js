@@ -6,7 +6,11 @@ class Header extends Component {
   renderLinks() {
     console.log(this.props.authenticated)
     if(this.props.authenticated) {
-      return <Link className="item" to="/logout/">Logout</Link>
+      return  [
+              <Link className="item" key={1} style={{display: 'inline', float: 'left'}} to="/dashboard/">Dashboard</Link>,
+              <Link className="item" key={2} style={{display: 'inline', float: 'left'}} to="/logout/">Logout</Link>
+            ];
+
     } else {
       return [
           <Link className="item" key={1} style={{display: 'inline', float: 'left'}} to="/login/">Login</Link>,

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
+import createBrowserHistory from 'history/createBrowserHistory';
 import * as actions from '../../actions';
+
+const browserHistory = createBrowserHistory();
 
 export const required = (value) => {
   if (!value) {
@@ -13,9 +17,18 @@ export const minLength = min => value => value && value.length < min ? `Must be 
 export const minLength8 = minLength(8);
 
 class Login extends Component {
+  state = {
+    redirectToReferrer: false
+  }
+
+  componentDidMount() {
+    console.log('login')
+  }
 
   handleFormValues(values) {
     this.props.loginUser(values);
+    browserHistory.push('/dashboard/');
+    return <Redirect to="/dashboard/" />;
   };
 
   renderField({
@@ -49,7 +62,7 @@ class Login extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form className="ui form" onSubmit={handleSubmit(this.handleFormValues)}>
+      <form className="ui form" onSubmit={handleSubmit(this.handleFormValues.bind(this))}>
         <Field
           name="username"
           component={this.renderField}

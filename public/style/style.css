@@ -1,0 +1,5 @@
+.mapboxgl-map {
+  min-height: 800px;
+  display: block;
+  overflow: visible !important;
+}
