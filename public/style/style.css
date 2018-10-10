@@ -3,3 +3,26 @@
   display: block;
   overflow: visible !important;
 }
+
+.header {
+  position: fixed;
+}
+
+.main.container {
+  margin-top: 7em;
+}
+
+.home-hero-img-container {
+  background: url('../images/the_silent_killer.jpeg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-width: 1920px;
+  max-width: 100%;
+  min-height: 800px;
+  margin: -15px auto;
+  padding: 0;
+}
+
+.content {
+  min-height: 1000px;
+}

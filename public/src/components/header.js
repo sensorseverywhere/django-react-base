@@ -21,13 +21,12 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="ui menu borderless">
-        <Link to="/" className="header item">Wildfire</Link>
-        <div>
-          {this.renderLinks()}
+        <div className="ui fixed menu borderless">
+          <Link to="/" className="header item">Wildfire</Link>
+          <div>
+            {this.renderLinks()}
+          </div>
         </div>
-      </div>
-
     );
   }
 }

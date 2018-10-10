@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import ReactMap from '../map/react-map';
 import Interface from '../map/interface';
 
-
 import * as actions from '../../actions';
 
 const TOKEN = 'pk.eyJ1IjoibW9ua2V5bWFwcGluZyIsImEiOiJjam4xZXV5c2EyOTE1M3dydXNsd3lvNG9hIn0.I3xKLXAmbi4cgN0-38B6ZQ';
@@ -21,7 +20,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="ui container">
       {/* <Interface /> */}
       <ReactMap
         token= { TOKEN }
@@ -31,7 +30,7 @@ class Dashboard extends Component {
         showPopUp= { true }
         styleID = { STYLE_ID }
       />
-      
+
 </div>
     );
   }

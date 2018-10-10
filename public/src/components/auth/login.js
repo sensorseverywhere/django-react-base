@@ -38,12 +38,14 @@ class Login extends Component {
     meta: { touched, error, warning }
    }) {
     return (
-      <div className="field">
-        <label>
-          {label}:
-        </label>
-        <input {...input} type={type} placeholder={label} />
-        {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+      <div className="ui container">
+        <div className="field">
+          <label>
+            {label}:
+          </label>
+          <input {...input} type={type} placeholder={label} />
+          {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+        </div>
       </div>
     );
   }
@@ -62,7 +64,7 @@ class Login extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form className="ui form" onSubmit={handleSubmit(this.handleFormValues.bind(this))}>
+      <form className="ui main container form" onSubmit={handleSubmit(this.handleFormValues.bind(this))}>
         <Field
           name="username"
           component={this.renderField}
@@ -75,8 +77,8 @@ class Login extends Component {
           label="Password"
           validate={required}
         />
-        {this.renderAlert()}
         <button action="submit" className="ui button">Sign In</button>
+        {this.renderAlert()}
       </form>
     );
   }

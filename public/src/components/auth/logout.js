@@ -8,7 +8,7 @@ class Logout extends Component {
   }
   render() {
     return (
-      <div> You have successfully signed out. </div>
+      <div className="ui main container"> You have successfully signed out. </div>
     );
   }
 }

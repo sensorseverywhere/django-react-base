@@ -39,7 +39,7 @@ class Register extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form className="ui form" onSubmit={handleSubmit(this.handleFormValues)}>
+      <form className="ui main container form" onSubmit={handleSubmit(this.handleFormValues)}>
         <Field
           name="username"
           component={this.renderField}
