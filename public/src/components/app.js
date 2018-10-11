@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './header';
+import Email from './form/email';
 
 export default class App extends Component {
   render() {
@@ -10,7 +11,7 @@ export default class App extends Component {
           <div className="hero-text-content">Let's get rid of the silent killer</div>
         </div>
         <div className="ui main container">
-          <div className="ui text segment">
+          <div className="ui text">
             <p>
               Rubbish is... everywhere, and the stats are bad. It's estimated that by 2050 there'll be more plastic in our oceans by weight than fish, and personally,
               I think that it's time we did something about it. So, here's my contribution, for what it's worth.
@@ -25,15 +26,61 @@ export default class App extends Component {
               needs. Read more <Link className="item" to="/how-it-works/">here</Link>.
             </p>
           </div>
-          <div className="ui grid segment">
-            <div className="four wide column center"><i className="massive users icon center"></i></div>
-            <div className="four wide column center "><i className="massive puzzle icon"></i></div>
-            <div className="four wide column "><i className="massive ambulance icon"></i></div>
-            <div className="four wide column"><i className="massive building icon"></i></div>
-          </div>
+          <div className="ui grid">
+            <div className="four wide column center">
+              <h2>Users Online</h2>
+              <i className="massive users icon center"></i>
+              <h1>834</h1>
+            </div>
+            <div className="four wide column center ">
+              <h2>Number of Projects</h2>
+              <i className="massive puzzle icon"></i>
+              <h1>326</h1>
+            </div>
+            <div className="four wide column ">
+              <h2>NGO's Involved</h2>
+              <i className="massive ambulance icon"></i>
+              <h1>12</h1>
+            </div>
+            <div className="four wide column">
+              <h2>Our Corporate Partners</h2>
+              <i className="massive building icon"></i>
+              <h1>56</h1>
+            </div>
 
+          </div>
+          <div >
+            <Email />
+          </div>
+          <div className="ui grid">
+            <div className="three wide column center">
+              <ul>
+                <li>Footer Link 1</li>
+                <li>Footer Link 1</li>
+                <li>Footer Link 1</li>
+                <li>Footer Link 1</li>
+              </ul>
+
+            </div>
+            <div className="three wide column center ">
+              <ul>
+                <li>Footer Link 1</li>
+                <li>Footer Link 1</li>
+                <li>Footer Link 1</li>
+                <li>Footer Link 1</li>
+              </ul>
+            </div>
+            <div className="three wide column ">
+              <ul>
+                <li>Footer Link 1</li>
+                <li>Footer Link 1</li>
+                <li>Footer Link 1</li>
+                <li>Footer Link 1</li>
+              </ul>
+
+            </div>
         </div>
-        {this.props.children}
+      </div>
       </div>
     );
   }
