@@ -16,7 +16,7 @@ module.exports = {
       // }
     }]
   },
-  devtool: 'eval', // this helps to browser to point to the exact file in the console, helps in debug
+  devtool: 'eval-source-map', // this helps to browser to point to the exact file in the console, helps in debug
   mode: 'development',
 
   devServer: {

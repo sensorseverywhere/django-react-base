@@ -9,7 +9,6 @@ import diffStyles from '../../utilities/diff.js';
 
 class ReactMap extends Component {
   componentDidMount(){
-    console.log('alsdkfjkl')
     // pass in your map properties as props to the component
     const { token, longitude, latitude, zoom, styleID } = this.props;
     const mapConfig = {
@@ -25,7 +24,6 @@ class ReactMap extends Component {
 
     this.map.on('load', () => {
       const style = this.map.getStyle();
-      console.log(style);
       // Do whatever you need to do once the map has loaded
     });
 }
@@ -34,7 +32,7 @@ class ReactMap extends Component {
 
   render(){
     return (
-      <div id='map'></div>
+      <div id='map' className="ui container"></div>
     );
   }
 }
