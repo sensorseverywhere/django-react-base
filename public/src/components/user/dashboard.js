@@ -17,23 +17,20 @@ class Dashboard extends Component {
 
   componentWillMount() {
     this.props.fetchMessage();
+    <div id="mount"></div>
+  }
+
+  renderMap(){
+    setTimeout(()=>{
+      return <LeafletReactMap />
+    },100);
   }
 
   render() {
     return (
       <div className="ui map container">
-        <div id="mount"></div>
-      {/* <ReactMap
-        token= { TOKEN }
-        longitude= { LONG }
-        latitude= { LAT }
-        zoom= { ZOOM }
-        showPopUp= { true }
-        styleID = { STYLE_ID }
-      /> */}
       <LeafletReactMap />
-
-</div>
+      </div>
     );
   }
 }

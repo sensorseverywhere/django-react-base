@@ -22,13 +22,13 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    console.log('login')
+  //  console.log('login')
   }
 
   handleFormValues(values) {
     this.props.loginUser(values);
     browserHistory.push('/dashboard/');
-    return <Redirect to="/dashboard/" />;
+  //  return <Redirect to="/dashboard/" />;
   };
 
   renderField({

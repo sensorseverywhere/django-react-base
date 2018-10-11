@@ -31,16 +31,44 @@
   min-height: 1000px;
 }
 
-.main.container {
-  margin-top: 1em;
-  padding: 40px 20px;
+.main.container.form {
+  width: 40%;
+  margin-top: 10em;
+  padding: 40px;
   box-shadow: rgb(170, 170, 170) 0px 8px 32px;
 }
+
+.main.container.wide {
+  width: 80%;
+  margin-top: 1em;
+  padding: 40px;
+  box-shadow: rgb(170, 170, 170) 0px 8px 32px;
+}
+
+.four.wide.column {
+  margin-top: 20px;
+  padding: 40px;
+  vertical-align: center;
+  text-align: center;
+}
+
+ui.segment.statistics {
+  margin-top: 40px;
+  
+}
+
+.data-display {
+  color: #40BAE3;
+  font-size: 4rem;
+}
+
 
 .map.container {
   margin-top: 7em;
   width: 80% !important;
 }
+
+
 
 .leaflet-container {
   height: 400px;

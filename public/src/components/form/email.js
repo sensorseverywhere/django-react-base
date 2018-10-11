@@ -38,11 +38,8 @@ class Email extends Component {
     meta: { touched, error, warning }
    }) {
     return (
-      <div className="ui container">
-        <div className="field">
-          <label>
-            {label}:
-          </label>
+      <div className="field">
+        <div className="ui action input">
           <input {...input} type={type} placeholder={label} />
           {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
         </div>
@@ -64,7 +61,7 @@ class Email extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form className="ui form" onSubmit={handleSubmit(this.handleFormValues.bind(this))}>
+      <form className="ui inverted form" onSubmit={handleSubmit(this.handleFormValues.bind(this))}>
         <Field
           name="email"
           component={this.renderField}
@@ -72,7 +69,7 @@ class Email extends Component {
           validate={required}
         />
 
-        <button action="submit" className="ui button">Sign In</button>
+        <button action="submit" className="fluid ui blue button">Get in Touch!</button>
         {this.renderAlert()}
       </form>
     );
