@@ -5,7 +5,9 @@
   "main": "index.js",
   "repository": "git@github.com:sensorseverywhere/django-react-base.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -25,6 +27,7 @@
     "babel-plugin-transform-proto-to-assign": "^6.4.0",
     "chai": "^4.2.0",
     "chai-jquery": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.3.1",
     "jsdom": "^12.2.0",
     "mocha": "^5.2.0",

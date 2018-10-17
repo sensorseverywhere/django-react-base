@@ -1,3 +1,10 @@
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+const htmlPlugin = new HtmlWebPackPlugin({
+  template: "./index.html",
+  filename: "./index.html"
+});
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -11,14 +18,14 @@ module.exports = {
     rules: [{
       exclude: /node_modules/,
       loader: 'babel-loader'
-      // query: {
-      //   presets: ['react', 'es2015', 'stage-1']
-      // }
     }]
   },
+  mode: "development",
+  // plugins: [htmlPlugin],
+  performance: {
+    hints: false
+  },
   devtool: 'eval-source-map', // this helps to browser to point to the exact file in the console, helps in debug
-  mode: 'development',
-
   devServer: {
     historyApiFallback: true,
     contentBase: './',
