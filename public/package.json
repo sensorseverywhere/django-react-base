@@ -39,7 +39,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-preset-stage-1": "^6.1.18",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
